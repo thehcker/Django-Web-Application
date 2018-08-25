@@ -6,5 +6,21 @@ class profiles(models.Model):
 	description = models.TextField(max_length =120)
 	location = models.TextField(max_length = 100, default = 'mylocationdefault')
 	job = models.TextField(max_length = 120, blank = True)
-	def __unicode__(self):
+	def __init__(self):
 		return self.name
+
+class Album(models.Model):
+	artist = models.CharField(max_length=120)
+	album_title = models.CharField(max_length =120)
+	genre = models.CharField(max_length = 100, default = 'mylocationdefault')
+	album_logo = models.ImageField(max_length = 120, blank = True)
+	def __unicode__(self):
+		return self.Album
+
+class Song(models.Model):
+	name = models.CharField(max_length=120)
+	genre = models.TextField(max_length =120)
+	producer = models.TextField(max_length = 100, default = 'mylocationdefault')
+	#year = models.TextField(max_length = 120, blank = True)
+	def __unicode__(self):
+		return self.Song
