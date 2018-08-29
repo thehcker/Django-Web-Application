@@ -15,12 +15,12 @@ class Album(models.Model):
 	genre = models.CharField(max_length = 100, default = 'mylocationdefault')
 	album_logo = models.ImageField(max_length = 120, blank = True)
 	def __unicode__(self):
-		return self.Album
+		return self.artist
 
 class Song(models.Model):
-	name = models.CharField(max_length=120)
+	song = models.CharField(max_length=120)
 	genre = models.TextField(max_length =120)
 	producer = models.TextField(max_length = 100, default = 'mylocationdefault')
 	#year = models.TextField(max_length = 120, blank = True)
 	def __unicode__(self):
-		return self.Song
+		return self.producer

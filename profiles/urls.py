@@ -9,6 +9,12 @@ urlpatterns = [
     path('home/', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('today/', views.today, name='today'),
+    path('contact/', views.contact, name='contact'),
+    path('logo/', views.logo, name='logo'),
+    path('login/', views.logo, name='login'),
+    path('signup/', views.logo, name='signup'),
+    path('logout/', views.logo, name='logout'),
+    path('song/', views.song, name='song'),
 ]
 
 if settings.DEBUG:

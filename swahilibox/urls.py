@@ -24,6 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('profiles/', include('profiles.urls')),
     path('contact/', contact_views.contact, name='contact'),
+    path('allauth/', include('allauth.urls')),
+
 ]
 if settings.DEBUG:
 	urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
