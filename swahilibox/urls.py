@@ -23,10 +23,11 @@ from profiles import views as profiles_views
 from contact import views as contact_views
 
 urlpatterns = [
+    path('', profiles_views.home, name='home'),
     path('admin/', admin.site.urls),
     path('profiles/', include('profiles.urls')),
     path('contact/', contact_views.contact, name='contact'),
-    path('allauth/', include('allauth.urls')),
+    path('accounts/', include('allauth.urls')),
 
 ]
 if settings.DEBUG:
