@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Song</title>
+</head>
+<body>
+<!--{{ Album }}
+
+{{ Song }}
+
+{% for i in Album %}
+ <i>{{ i.artist }}</i>
+{%  endfor %}-->
+
+<table width ="100px">
+  <tr>
+    <th>No</th>
+    <th>Song artist</th> 
+  </tr>
+  {% for i in Album %}
+  <tr>
+    <td>{{ i.id }}</td>
+    <td>{{ i.artist }}</td> 
+  </tr>
+  {%  endfor %}
+</table>
+<!--{% for i in Song %}
+ {{ i.song }}
+{%  endfor %}-->
+</body>
+</html>

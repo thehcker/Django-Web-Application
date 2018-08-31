@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render,HttpResponse
 
 from profiles.models import Album,Song
@@ -46,10 +47,27 @@ def logout(request):
 	template = 'logout.html'
 	return render(request,template,context)
 
-def song(request):
+def tablet(request):
 	songs = Song.objects.all()
 	album = Album.objects.all()
-	#context = locals()
+	template = 'tablet.html'
+	return render(request,template,{"Song":songs,"Album":album})
+
+def song(request):
+	songs = Song.objects.all()
 	template = 'song.html'
-	return render(request,template,{"Album":album,"Song":songs})
+	return render(request,template,{"Song":songs})
+
+def album(request):
+	album = Album.objects.all()
+	template = 'album.html'
+	return render(request,template,{"Album":album})
+"""
+@login_required
+def userProfile(request):
+	user = request.user
+	context = {'user': user}
+	template = 'profile.html'
+	return render(request,template,context)
+"""
 

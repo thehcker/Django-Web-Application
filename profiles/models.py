@@ -14,13 +14,14 @@ class Album(models.Model):
 	album_title = models.CharField(max_length =120)
 	genre = models.CharField(max_length = 100, default = 'mylocationdefault')
 	album_logo = models.ImageField(max_length = 120, blank = True)
-	def __unicode__(self):
+	def __str__(self):
 		return self.artist
 
 class Song(models.Model):
+	#album = models.ForeignKey(Album,on_delete = models.CASCADE,null=True, default='identity')
 	song = models.CharField(max_length=120)
 	genre = models.TextField(max_length =120)
 	producer = models.TextField(max_length = 100, default = 'mylocationdefault')
 	#year = models.TextField(max_length = 120, blank = True)
-	def __unicode__(self):
+	def __str__(self):
 		return self.producer
