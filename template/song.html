@@ -6,14 +6,30 @@
 <body>
 <!--{{ Album }}
 
-{{ Song }}-->
+{{ Song }}
 
 {% for i in Album %}
  <i>{{ i.artist }}</i>
-{%  endfor %}
+{%  endfor %}-->
 
-{% for i in Song %}
+<table width ="100px" border="1px solid red">
+  <tr>
+    <th>No</th>
+    <th>Song artist</th> 
+    <th>genre</th>
+    <th>Producer</th> 
+  </tr>
+  {% for i in Song %}
+  <tr>
+    <td>{{ i.id }}</td>
+    <td>{{ i.song }}</td> 
+    <td>{{ i.genre }}</td>
+    <td>{{ i.producer }}</td
+  </tr>
+  {%  endfor %}
+</table>
+<!--{% for i in Song %}
  {{ i.song }}
-{%  endfor %}
+{%  endfor %}-->
 </body>
 </html>

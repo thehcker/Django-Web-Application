@@ -100,6 +100,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+    
 }
 
 
@@ -155,7 +156,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 SITE_ID = 1
 
 LOGIN_URL = 'accounts/login'
-LOGIN_REDIRECT_URL = 'logo'
+LOGIN_REDIRECT_URL = 'prof'
 #LOGOUT_REDIRECT_URL = 'home'
 
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"

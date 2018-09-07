@@ -16,10 +16,17 @@ urlpatterns = [
     path('login/', views.login, name='account_login'),
     path('signup/', views.signup, name='account_signup'),
     path('logout/', views.logout, name='account_logout'),
-    path('songS/', views.song, name='song'),
+    path('song/', views.song, name='song'),
     path('album/', views.album, name='album'),
     path('tablet/', views.tablet, name='tablet'),
-    #path('profile/', views.profile, name='profile'),
+    path('prof/', views.userProfile, name='prof'),
+    path('titledeed/', views.titleDeed, name='titledeed'),
+    path('deed/', views.Deed, name='deed'),
+    path('add/', views.add, name='add'),
+    path('addalbum/', views.addalbum, name='addalbum'),
+    path('newSong/', views.newSong, name='newsong'),
+    path('addsong/', views.addsong, name='addsong'),
+
 ]
 
 if settings.DEBUG:
