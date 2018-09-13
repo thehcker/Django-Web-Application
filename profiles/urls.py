@@ -26,6 +26,8 @@ urlpatterns = [
     path('addalbum/', views.addalbum, name='addalbum'),
     path('newSong/', views.newSong, name='newsong'),
     path('addsong/', views.addsong, name='addsong'),
+    path('albumimage/', views.albumimage, name='albumimage'),
+    path('signupform/', views.signupforms, name='signupform'),
 
 ]
 

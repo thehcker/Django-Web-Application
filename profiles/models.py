@@ -14,7 +14,7 @@ class Album(models.Model):
 	artist = models.CharField(max_length=120)
 	album_title = models.CharField(max_length =120)
 	genre = models.CharField(max_length = 100, default = 'mylocationdefault')
-	album_logo = models.ImageField(max_length = 120, blank = True)
+	album_logo = models.CharField(max_length = 120, blank = True)
 	def __str__(self):
 		return self.album_title
 

@@ -2,6 +2,9 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render,HttpResponse,redirect
 
 from profiles.models import Album,Song,titledeed
+from profiles.forms import AlbumForm,signupform
+from django.contrib.auth import login
+
 
 # Create your views here.
 def homee(request):
@@ -123,4 +126,31 @@ def addsong(request):
 		)
 	songs.save()
 	return redirect('song')
+
+def albumimage(request):
+	if request.method == "POST":
+		form = AlbumForm(request.POST or None)
+		if form.is_valid():
+			form.save()
+			print("Added successfully")
+			return redirect('album')
+	else:
+		form = AlbumForm()
+	return render(request,'albumimage.html',{'form':form})
+
+def signupforms(request):
+	if request.method == "POST":
+		form = signupform(request.POST or None)
+		if form.is_valid():
+
+			#form.save()
+			user = form.save(commit=False)
+			login(request,user)
+			print("Added successfully")
+			return redirect('album')
+	else:
+		form = signupform()
+	return render(request,'signupform.html',{'form':form})
+	
+
 
